@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #0f121a;
+    color: #e7ecf3;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-full font-semibold transition-all duration-200 shadow-lg hover:scale-105 active:scale-95;
+  }
+  
+  .btn-primary {
+    background-color: #7cffd1;
+    color: #111827;
+    @apply px-6 py-3 rounded-full font-semibold transition-all duration-200 shadow-lg hover:scale-105 active:scale-95;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgba(124, 255, 209, 0.9);
+  }
+  
+  .btn-secondary {
+    background-color: #20263a;
+    color: #e7ecf3;
+    border: 1px solid #404854;
+    @apply px-6 py-3 rounded-full font-semibold transition-all duration-200 shadow-lg hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary:hover {
+    border-color: rgba(124, 255, 209, 0.5);
+  }
+  
+  .card {
+    background-color: #171b26;
+    border: 1px solid #2d323e;
+    @apply rounded-2xl p-6 shadow-xl;
+  }
+  
+  .stat-card {
+    background-color: #20263a;
+    border: 1px solid #404854;
+    @apply rounded-xl p-4;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171b26;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7cffd1;
+  border-radius: 4px;
+}
+
+/* Wheel animation */
+@keyframes spin-wheel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+.wheel-spinning {
+  animation: spin-wheel 3s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards;
+}
